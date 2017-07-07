@@ -4,8 +4,8 @@ Create a full stack app from scratch
 Basic
 -------
 - [ ] Create a UI that allows the user to create a task
-  - [ ] Create a text input field & submit button
-  - [ ] Create an area where task will be displayed
+  - [x] Create a text input field & submit button
+  - [x] Create an area where task will be displayed
   - [ ] Create two CSS styles for tasks: uncompleted & completed
 - [ ] Create local database using Postico
   - [ ] Create & save databaseSetup.sql file w/ project files
