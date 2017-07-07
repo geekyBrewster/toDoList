@@ -1,0 +1,76 @@
+body {
+  font-family: 'Kalam', cursive;
+  background-color: #E1E2E3;
+}
+header {
+  background-color: #4a148c;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+}
+
+div {
+  max-width: 900px;
+}
+
+h1, h2 {
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 0.1em;
+  margin: 0 auto;
+}
+h4 {
+  margin: 0 auto;
+}
+
+#addTask {
+  height: 40px;
+  background-color: #7c43bd;
+  margin: 0 auto;
+}
+
+/*button {
+  background-color: #00bcd4;
+  color: #12005e;
+  margin: 10px 10px;
+}*/
+
+.btn {
+  margin: 10px 10px;
+  padding: 5px;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #00bcd4;
+  color: #12005e;
+
+  transition: background-color .3s;
+}
+
+.btn:hover, .btn:focus {
+  background-color: #008ba3;
+  color: white;
+}
+
+input {
+  margin-left: 10px;
+}
+
+#taskList {
+  background-color: #fff;
+  max-width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 10px 10px;
+}
+
+footer {
+  background-color: #7c43bd;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.2em;
+}
