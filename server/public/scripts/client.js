@@ -40,6 +40,24 @@ displayTasks();
     }); // end of DELETE request
   }); // end of deleteBtn listener
 
+// Add complete btn listener
+  $('#taskList').on('click', '#completedBtn', function(){
+    var id = $(this).data('id');
+      console.log("Button id: ", id);
+
+      // ajax call to update task (PUT reqeust)
+      $.ajax({
+        type: 'PUT',
+        url: '/tasks/' + id,
+        success: function(response){
+          console.log("Task marked completed");
+          var targetTask = '#task' + id;
+          $('targetTask').addClass('.completed');
+          displayTasks();
+        } // end of success
+      }); // end of PUT request
+
+  }); // end of btn listener
 
 }); // end of doc.ready
 
@@ -59,15 +77,15 @@ function displayTasks(){
 
         // Check completion status and assign correct class
         if(toDo.completed){
-          $('#taskList').append('<div class="task"></div>');
+          $('#taskList').append('<div class="task completed" id="task' + toDo.id + '"></div>');
           $el = $('#taskList').children().last();
           $el.append('<span>' + toDo.task + '</span>');
           $el.append('<button class="btn" id="deleteBtn" data-id="' + toDo.id + '">Delete</button>');
         } else {
-          $('#taskList').append('<div class="task"></div>');
+          $('#taskList').append('<div class="task" id="task' + toDo.id + '"></div>');
           $el = $('#taskList').children().last();
           $el.append('<span>' + toDo.task + '</span>');
-          $el.append('<button class="btn" id="completed" data-id="' + toDo.id +'">Completed</button>');
+          $el.append('<button class="btn" id="completedBtn" data-id="' + toDo.id +'">Completed</button>');
           $el.append('<button class="btn" id="deleteBtn" data-id="' + toDo.id + '">Delete</button>');
         }
       } // end of for loop

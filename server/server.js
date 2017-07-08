@@ -95,9 +95,30 @@ app.delete('/tasks/:id', function(req, res){
   }); // end pool
 }); // end of DELETE
 
-
-
-
+// Mark task completed in DB
+app.put('/tasks/:id', function(req, res){
+  pool.connect(function(errorConnectingToDatabase, db, done){
+    if(errorConnectingToDatabase) {
+      console.log('Error connecting to the database.');
+      res.sendStatus(500);
+    } else {
+      var id = req.params.id;
+        // console.log("button id: ", id);
+      var queryText = 'UPDATE "todos" SET "completed" = \'true\' WHERE "id"=$1;';
+      db.query(queryText,[id], function(errorMakingQuery, result){
+        done();
+        if(errorMakingQuery) {
+          console.log('Attempted to query with', queryText);
+          console.log('Error making query');
+          res.sendStatus(500);
+        } else {
+            // console.log(queryText);
+          res.send({todos: result.rows});
+        }
+      }); // end query
+    } // end if
+  }); // end pool
+}); // end of PUT
 
 // Serve back static files by default
 app.get('/*', function(req, res){

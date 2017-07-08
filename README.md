@@ -21,19 +21,22 @@ Basic
   - [x] Add task to the database w/ POST request
   - [x] Each task should have a complete & delete button
 - When a task is completed, change its visual representation
-  - [ ] Add click listener to complete button
-  - [ ] Change task's class on click
-  - [ ] Update task's completion status in DB
-- [ ] Deleting a task should remove it from both front end and DB
-  - [ ] Add click listener to delete button
-  - [ ] Remove task from the DOM
-  - [ ] Delete the task from the DB
-- [ ] Add appealing CSS to the UI
+  - [x] Add click listener to complete button
+  - [x] Change task's class on click
+  - [x] Update task's completion status in DB
+  - [ ] Add toggle complete/uncompleted to button
+- Deleting a task should remove it from both front end and DB
+  - [x] Add click listener to delete button
+  - [x] Remove task from the DOM
+  - [x] Delete the task from the DB
+- [x] Add appealing CSS to the UI
 
 Hard
 -------
 - [ ] Add an "Are you sure?" option when deleting a task
 - [ ] Add jQuery animation to the appearance / disappearance of tasks
+- [ ] Replace completed button w/ checkbox
+- [ ] Replace horizontal bars for tasks w/ floating boxes w/ icons
 
 Pro
 ------
