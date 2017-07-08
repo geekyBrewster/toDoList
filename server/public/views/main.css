@@ -7,10 +7,11 @@ header {
   color: white;
   text-align: center;
   margin: 0 auto;
+  max-width: 800px;
 }
 
 div {
-  max-width: 900px;
+  max-width: 800px;
 }
 
 h1, h2 {
@@ -35,7 +36,7 @@ h4 {
 }*/
 
 .btn {
-  margin: 10px 10px;
+  margin: 10px 5px;
   padding: 5px;
 
   overflow: hidden;
@@ -58,14 +59,29 @@ h4 {
 
 input {
   margin-left: 10px;
+  width: 400px;
 }
 
 #taskList {
-  background-color: #fff;
+  background-color: #F2F2F2;
   max-width: 600px;
   height: 400px;
   margin: 0 auto;
   padding: 10px 10px;
+}
+
+.task {
+background-color: white;
+  font-size: 1.5em;
+  border: 1px dashed grey;
+  padding: 5px 10px;
+}
+.task .btn {
+  float: right;
+}
+
+.completed {
+  background-color: #73e8ff;
 }
 
 footer {
@@ -73,4 +89,6 @@ footer {
   color: white;
   text-align: center;
   letter-spacing: 0.2em;
+  max-width: 800px;
+  margin: 0 auto;
 }
