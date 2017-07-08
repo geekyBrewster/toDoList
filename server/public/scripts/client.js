@@ -2,11 +2,27 @@ console.log("JS up and Atom!");
 
 $(document).ready(function(){
 
-// display tasks
 displayTasks();
 
 // Retrieve entered data & build data object
+  // Add click listener to submit button
+  $('#submitBtn').on('click', function(){
+    var task = $('#taskText').val();
+      // console.log("Task entered: ", task);
+    var toDo = {task: task, completed: false};
+      // console.log("toDo being sent: ", toDo);
 
+    // send data to server via POST
+    $.ajax({
+      type: 'POST',
+      url: '/tasks',
+      data: toDo,
+      success: function(response){
+        console.log("Received from server: ", response);
+        displayTasks();
+      } // end success
+    }); // end POST request
+  });
 
 
 

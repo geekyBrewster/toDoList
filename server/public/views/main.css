@@ -52,7 +52,7 @@ h4 {
   transition: background-color .3s;
 }
 
-.btn:hover, .btn:focus {
+.btn:hover {
   background-color: #008ba3;
   color: white;
 }
@@ -65,7 +65,7 @@ input {
 #taskList {
   background-color: #F2F2F2;
   max-width: 600px;
-  height: 400px;
+  /*height: 400px;*/
   margin: 0 auto;
   padding: 10px 10px;
 }
