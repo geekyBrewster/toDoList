@@ -63,14 +63,37 @@ app.post('/tasks', function(req, res){
           res.sendStatus(500);
         } else {
             // console.log(queryText);
-          res.send({toDos: result.rows});
+          res.send({todos: result.rows});
         }
       }); // end query
     } // end if
   }); // end pool
 }); // end of POST
 
-
+// DELETE task from DB
+app.delete('/tasks/:id', function(req, res){
+  pool.connect(function(errorConnectingToDatabase, db, done){
+    if(errorConnectingToDatabase) {
+      console.log('Error connecting to the database.');
+      res.sendStatus(500);
+    } else {
+      var id = req.params.id;
+        // console.log("button id: ", id);
+      var queryText = 'DELETE FROM "todos" WHERE "id"=$1;';
+      db.query(queryText,[id], function(errorMakingQuery, result){
+        done();
+        if(errorMakingQuery) {
+          console.log('Attempted to query with', queryText);
+          console.log('Error making query');
+          res.sendStatus(500);
+        } else {
+            // console.log(queryText);
+          res.send({todos: result.rows});
+        }
+      }); // end query
+    } // end if
+  }); // end pool
+}); // end of DELETE
 
 
 
