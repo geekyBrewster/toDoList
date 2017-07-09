@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 displayTasks();
 
-// Add click listener to submit button
+// ADD TASK -- SUBMIT BUTTON
   $('#submitBtn').on('click', function(){
   // Retrieve entered data & build data object
     var task = $('#taskText').val();
@@ -15,7 +15,7 @@ displayTasks();
   // send data to server via POST
     $.ajax({
       type: 'POST',
-      url: '/tasks',
+      url: '/todos',
       data: toDo,
       success: function(response){
         console.log("Received from server: ", response);
@@ -24,7 +24,7 @@ displayTasks();
     }); // end POST request
   }); // end of addBtn listener
 
-// Add Delete btn listener
+// DELETE TASK -- DELETE BUTTON
   $('#taskList').on('click', '#deleteBtn', function(){
     var id = $(this).data('id');
       // console.log("Button id: ", id);
@@ -32,7 +32,7 @@ displayTasks();
     // ajax call to delete task
     $.ajax({
       type: 'DELETE',
-      url: '/tasks/' + id,
+      url: '/todos/' + id,
       success: function(response){
         console.log("Task deleted");
         displayTasks();
@@ -40,15 +40,15 @@ displayTasks();
     }); // end of DELETE request
   }); // end of deleteBtn listener
 
-// Add complete btn listener
+// COMPLETE TASK -- CHECKMARK BUTTON
   $('#taskList').on('click', '#completedBtn', function(){
     var id = $(this).data('id');
       console.log("Button id: ", id);
 
-      // ajax call to update task (PUT reqeust)
+      // ajax call to update todo (PUT reqeust)
       $.ajax({
         type: 'PUT',
-        url: '/tasks/' + id,
+        url: '/todos/completed/' + id,
         success: function(response){
           console.log("Task marked completed");
           var targetTask = '#task' + id;
@@ -56,8 +56,25 @@ displayTasks();
           displayTasks();
         } // end of success
       }); // end of PUT request
-
   }); // end of btn listener
+
+  // UNDO COMPLETE TASK -- UNDO BUTTON
+    $('#taskList').on('click', '#undoBtn', function(){
+      var id = $(this).data('id');
+        console.log("Button id: ", id);
+
+        // ajax call to update todo (PUT reqeust)
+        $.ajax({
+          type: 'PUT',
+          url: '/todos/undo/' + id,
+          success: function(response){
+            console.log("Task marked UNcompleted");
+            var targetTask = '#task' + id;
+            $('targetTask').removeClass('.completed');
+            displayTasks();
+          } // end of success
+        }); // end of PUT request
+    }); // end of btn listener
 
 }); // end of doc.ready
 
@@ -66,7 +83,7 @@ function displayTasks(){
   // ajax call to server to get tasks
   $.ajax({
     type: 'GET',
-    url: '/tasks',
+    url: '/todos',
     success: function(response){
       console.log('Tasks received from server: ', response);
       var toDos = response.todos;
@@ -80,13 +97,14 @@ function displayTasks(){
           $('#taskList').append('<div class="task completed" id="task' + toDo.id + '"></div>');
           $el = $('#taskList').children().last();
           $el.append('<span>' + toDo.task + '</span>');
-          $el.append('<button class="btn" id="deleteBtn" data-id="' + toDo.id + '">Delete</button>');
+          $el.append('<button class="btn" id="undoBtn" data-id="' + toDo.id +'"><i class="fa fa-undo fa-2x" aria-hidden="true"></i></button>');
+          $el.append('<button class="btn" id="deleteBtn" data-id="' + toDo.id + '"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>');
         } else {
           $('#taskList').append('<div class="task" id="task' + toDo.id + '"></div>');
           $el = $('#taskList').children().last();
           $el.append('<span>' + toDo.task + '</span>');
-          $el.append('<button class="btn" id="completedBtn" data-id="' + toDo.id +'">Completed</button>');
-          $el.append('<button class="btn" id="deleteBtn" data-id="' + toDo.id + '">Delete</button>');
+          $el.append('<button class="btn" id="completedBtn" data-id="' + toDo.id +'"><i class="fa fa-check-square fa-2x" aria-hidden="true"></i></button>');
+          $el.append('<button class="btn" id="deleteBtn" data-id="' + toDo.id + '"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>');
         }
       } // end of for loop
     } // end of success
