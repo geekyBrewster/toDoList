@@ -35,8 +35,7 @@ Hard
 -------
 - [ ] Add an "Are you sure?" option when deleting a task
 - [ ] Add jQuery animation to the appearance / disappearance of tasks
-- [ ] Replace completed button w/ checkbox
-- [ ] Replace horizontal bars for tasks w/ floating boxes w/ icons
+- [x] Replace completed button w/ checkbox icon
 
 Pro
 ------
