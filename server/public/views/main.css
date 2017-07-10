@@ -89,6 +89,7 @@ background-color: white;
 
 .completed {
   background-color: #73e8ff;
+  text-decoration: line-through;
 }
 
 footer {

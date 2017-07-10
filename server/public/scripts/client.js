@@ -103,6 +103,7 @@ function displayTodos(){
     success: function(response){
       console.log('Tasks received from server: ', response);
       var toDos = response.todos;
+      var taskContainer = $('#taskList');
 
       for(var i = 0; i < toDos.length; i++){
         var toDo = toDos[i];
@@ -112,15 +113,19 @@ function displayTodos(){
         if(toDo.completed){
           $('#taskList').append('<div class="task completed" id="task' + toDo.id + '"></div>');
           $el = $('#taskList').children().last();
+          $el.hide();
           $el.append('<span>' + toDo.task + '</span>');
           $el.append('<button class="btn" id="undoBtn" data-id="' + toDo.id +'"><i class="fa fa-undo fa-2x" aria-hidden="true"></i></button>');
           $el.append('<button class="btn" id="deleteBtn" data-id="' + toDo.id + '"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>');
+          $el.slideDown();
         } else {
           $('#taskList').append('<div class="task" id="task' + toDo.id + '"></div>');
           $el = $('#taskList').children().last();
+          $el.hide();
           $el.append('<span>' + toDo.task + '</span>');
           $el.append('<button class="btn" id="completedBtn" data-id="' + toDo.id +'"><i class="fa fa-check-square fa-2x" aria-hidden="true"></i></button>');
           $el.append('<button class="btn" id="deleteBtn" data-id="' + toDo.id + '"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>');
+          $el.slideDown();
         }
       } // end of for loop
     } // end of success

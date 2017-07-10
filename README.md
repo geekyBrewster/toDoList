@@ -33,8 +33,8 @@ Basic
 
 Hard
 -------
-- [ ] Add an "Are you sure?" option when deleting a task
-- [ ] Add jQuery animation to the appearance / disappearance of tasks
+- [x] Add an "Are you sure?" option when deleting a task
+- [ ] Animate appearance of delete button
 - [x] Replace completed button w/ checkbox icon
 
 Pro

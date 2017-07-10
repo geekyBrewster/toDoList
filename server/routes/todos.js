@@ -20,7 +20,7 @@ router.get('/', function(req, res){
       console.log('Error connecting to the database.');
       res.sendStatus(500);
     } else {
-      var queryText = 'SELECT * FROM "todos" ORDER BY "id" ASC;';
+      var queryText = 'SELECT * FROM "todos" ORDER BY "completed";';
       db.query(queryText, function(errorMakingQuery, result){
         done();
         if(errorMakingQuery) {
