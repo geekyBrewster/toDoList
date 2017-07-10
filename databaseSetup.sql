@@ -7,4 +7,4 @@ CREATE TABLE "todos" (
 
 /* Add sample tasks */
 INSERT INTO "todos" ("task", "completed")
-VALUES ('Feed Hedwig', false), ('Visit Hagrid', true), ('Defeat Voldemort', false);
+VALUES ('Feed Hedwig', false), ('Visit Hagrid', true), ('Defeat Voldemort', false), ('Pratice Quidditch', false);

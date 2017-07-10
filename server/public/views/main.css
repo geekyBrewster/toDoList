@@ -1,11 +1,10 @@
 body {
   font-family: 'Kalam', cursive;
+  background: linear-gradient(90deg, #8e9eab, #eef2f3);
   background-color: #E1E2E3;
+  margin: 10px 10px;
 }
-.container {
-  border: 2px solid darkGrey;
-  max-width: 800px;
-}
+
 header {
   background-color: #4a148c;
   color: white;
@@ -19,13 +18,8 @@ h1, h2 {
   letter-spacing: 0.1em;
   margin: 0 auto;
 }
-h4 {
-  margin: 0 auto;
-}
 
-#addTask {
-  height: 40px;
-  background-color: #7c43bd;
+h4 {
   margin: 0 auto;
 }
 
@@ -33,29 +27,59 @@ button {
   background-color: rgba(0,110,120,0);
   border: none !important;
   color: #12005e;
-  padding: 10px 10px;
-  margin: 0;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  float: right;
+}
+button:hover {
+  background: #12005e;
+  color: white;
+  border-radius: 10px 10px;
 }
 
-button:hover {
-  background: rgba(0, 110, 120, 0.5);
+input {
+  margin-left: 10px;
+  width: 300px;
+}
 
+footer {
+  background-color: #7c43bd;
+  color: #C167EB;
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin: 0 auto;
+}
+
+.container {
+  border: 2px solid darkGrey;
+  background-color: #E8E8E8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.task {
+  background-color: white;
+  font-size: 1.5em;
+  border: 1px dashed grey;
+  padding: 5px 10px;
+}
+
+.completed {
+  background-color: #73e8ff;
+  text-decoration: line-through;
 }
 
 #submitBtn {
+  float: none;
   margin: 10px 5px;
   padding: 5px;
-
   overflow: hidden;
-
   border-width: 0;
   outline: none;
   border-radius: 2px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-
   background-color: #00bcd4;
   color: #12005e;
-
   transition: background-color .3s;
 }
 
@@ -64,38 +88,14 @@ button:hover {
   color: white;
 }
 
-input {
-  margin-left: 10px;
-  width: 400px;
+#addTask {
+  height: 40px;
+  background-color: #7c43bd;
+  margin: 0 auto;
 }
 
 #taskList {
-  background-color: #F2F2F2;
   max-width: 600px;
-  /*height: 400px;*/
   margin: 0 auto;
   padding: 10px 10px;
-}
-
-.task {
-background-color: white;
-  font-size: 1.5em;
-  border: 1px dashed grey;
-  padding: 5px 10px;
-}
-.task .btn {
-  float: right;
-}
-
-.completed {
-  background-color: #73e8ff;
-  text-decoration: line-through;
-}
-
-footer {
-  background-color: #7c43bd;
-  color: white;
-  text-align: center;
-  letter-spacing: 0.2em;
-  margin: 0 auto;
 }

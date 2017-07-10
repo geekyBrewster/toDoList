@@ -34,9 +34,9 @@ Basic
 Hard
 -------
 - [x] Add an "Are you sure?" option when deleting a task
-- [ ] Animate appearance of delete button
 - [x] Replace completed button w/ checkbox icon
+- [x] Animated refresh of todo list
 
 Pro
 ------
-- [ ] Adjust logic so that the completed tasks are brought to the bottom of the page
+- [x] Adjust logic so that the completed tasks are brought to the bottom of the page
