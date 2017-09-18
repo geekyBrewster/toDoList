@@ -1,42 +1,41 @@
 # Weekend challenge 3: To Do List
-Create a full stack app from scratch
 
-Basic
--------
-- Create a UI that allows the user to create a task
-  - [x] Create a text input field & submit button
-  - [x] Create an area where task will be displayed
-  - [x] Create two CSS styles for tasks: uncompleted & completed
-- Create local database using Postico
-  - [x] Create & save databaseSetup.sql file w/ project files
-  - [x] Database should include: id, task, completion status
-  - [x] Add a few sample tasks for testing
-- Display existing tasks on the DOM (GET request)
-  - [x] Request tasks from server
-  - [x] Send tasks from DB to client
-  - [x] Append existing tasks to the DOM
-- Upon submitting a task:
-  - [x] Retrieve entered data & build data object
-  - [x] Send data to the server
-  - [x] Add task to the database w/ POST request
-  - [x] Each task should have a complete & delete button
-- When a task is completed, change its visual representation
-  - [x] Add click listener to complete button
-  - [x] Change task's class on click
-  - [x] Update task's completion status in DB
-  - [ ] Add toggle complete/uncompleted to button
-- Deleting a task should remove it from both front end and DB
-  - [x] Add click listener to delete button
-  - [x] Remove task from the DOM
-  - [x] Delete the task from the DB
-- [x] Add appealing CSS to the UI
+Create a full stack app from scratch using jQuery and SQL.
 
-Hard
--------
-- [x] Add an "Are you sure?" option when deleting a task
-- [x] Replace completed button w/ checkbox icon
-- [x] Animated refresh of todo list
+# Technologies
+* JQuery
+* Node
+* Express
+* SQL
 
-Pro
-------
-- [x] Adjust logic so that the completed tasks are brought to the bottom of the page
+# Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+# Prerequisites
+
+What things you need to install the software and how to install them
+
+Give examples
+Installing
+
+A step by step series of examples that tell you have to get a development env running
+
+
+End with an example of getting some data out of the system or using it for a little demo
+
+# Deployment
+
+Add additional notes about how to deploy this on a live system
+
+# Authors
+
+Amanda Kirchner
+
+# License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+# Acknowledgments
+
+Prime Digital Academy staff
